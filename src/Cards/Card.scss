@@ -1,0 +1,42 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+  
+    width: 100%;
+    aspect-ratio: 6 / 8.5;
+  
+    padding: 3ch;
+    border-radius: 2px;
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+  
+    nav {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+    .value {
+        font-size: 3rem;
+    }
+
+    button {
+        appearance: none;
+        margin: 0 auto;
+        margin-top: 2px;
+        padding: .5rem;
+        font-size: 1.2rem;
+        border-radius: 500px;
+        width: 75%;
+
+    }
+
+}

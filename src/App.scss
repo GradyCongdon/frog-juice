@@ -1,0 +1,20 @@
+body {
+  font-family: 'Questrial', sans-serif;
+  /* font-family: 'Nanum Myeongjo', serif; */
+}
+ main {
+   max-width: 75ch;
+   margin: 0 auto;
+ }
+
+pre {
+  display: block;
+  width: 80ch;
+  white-space: pre;
+}
+
+.game-title {
+  font-size: 2rem;
+  text-align: center;
+  color: greenyellow;
+}

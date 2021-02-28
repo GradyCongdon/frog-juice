@@ -1,9 +1,20 @@
 import React from 'react';
 import { useMachine } from '@xstate/react';
 import { gameMachine } from './machine';
-import './App.css';
+import './reset.css';
+import './App.scss';
+import { Ingredient } from './Cards/Ingredient';
+import { Cards } from './Cards';
 
 type Send = (action: string) => void;
+
+const CardStack = ({ onClick }: any) => {
+  return (
+    <figure onClick={onClick}>
+      Back
+    </figure>
+  );
+}
 
 type TurnProps = {
   state: string
@@ -15,17 +26,15 @@ const Turn = ({state, send}: TurnProps) => {
       <h2>
         Turn {state}
       </h2>
-      <button onClick={() => send('DRAW')}>
-        Draw
-      </button>
+      <CardStack onClick={() => send('DRAW')} />
 
       <button onClick={() => send('ACTION')}>
         Action
       </button>
     </>
   );
-
 }
+
 
 type GameProps = {
   state: any
@@ -39,16 +48,27 @@ const Game = ({state, send}: GameProps) => {
   }
 }
 
-function App() {
-  const [ state, send ] = useMachine(gameMachine);
+const DebugGame = ({ state, send }: GameProps) => {
   return (
-    <div>
-      <h1>Frog Juice</h1>
-      <Game state={state} send={send}/>
+    <aside>
       <pre>
         {JSON.stringify(state, null, '  ')}
       </pre>
-    </div>
+    </aside>
+  );
+}
+
+
+function App() {
+  const [state, send] = useMachine(gameMachine);
+
+  return (
+    <>
+      <main>
+        <h1 className="game-title">Frog Juice</h1>
+        <Cards />
+      </main>
+    </>
   );
 }
 
