@@ -119,11 +119,13 @@ const themes = [
     'bananas',
     'melon-soup',
     'creamsicle',
+    // not good
     'rage',
     'sunset',
     'toy-block',
-    // 'gold-marble',
-    // 'red-slate',
+    // bad
+    'gold-marble',
+    'red-slate',
 ];
 
 export function Cards() {
